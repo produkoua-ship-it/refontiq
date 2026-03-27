@@ -1,0 +1,1944 @@
+<!--
+  Refontiq - Redesign v3.0
+  Style: Glassmorphism mint/white gradient (matching design mockup)
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Création de Sites Web Haute Performance à Abidjan | Refontiq</title>
+    <meta name="description"
+        content="Agence web Refontiq à Abidjan. Création de site premium, refonte intelligente, automatisation et méthodologie rigoureuse. Livraison en 7-14 jours.">
+    <meta name="keywords"
+        content="Création de site web Abidjan, Agence web Côte d'Ivoire, Refonte de site internet, Conception site e-commerce CI, Développeur web sur-mesure">
+    <meta name="author" content="Refontiq">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://refontiq.com">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://refontiq.com">
+    <meta property="og:title" content="Refontiq - Création de Sites Web Haute Performance à Abidjan">
+    <meta property="og:description"
+        content="Agence web premium à Abidjan. Sites uniques, ultra-rapides, optimisés Mobile-First.">
+    <meta property="og:locale" content="fr_CI">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Refontiq",
+        "description": "Agence web haute performance à Abidjan",
+        "url": "https://refontiq.com",
+        "telephone": "+2250100372900",
+        "email": "contact@refontiq.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Abidjan",
+            "addressCountry": "CI"
+        }
+    }
+    </script>
+
+    <style>
+        /* ===== VARIABLES ===== */
+        :root {
+            --teal: #2dd4bf;
+            --teal-dark: #14b8a6;
+            --teal-light: #99f6e4;
+            --navy: #0d1f3c;
+            --navy-mid: #1e3a5f;
+            --white: #ffffff;
+            --bg-page: #f0fafa;
+            --bg-mint: linear-gradient(135deg, #e0f7f4 0%, #f0fafa 40%, #ffffff 100%);
+            --text-dark: #0d1f3c;
+            --text-mid: #334155;
+            --text-soft: #64748b;
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.9);
+            --shadow-card: 0 8px 32px rgba(45, 212, 191, 0.10), 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 20px 48px rgba(45, 212, 191, 0.18), 0 4px 16px rgba(0, 0, 0, 0.08);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --max-width: 1200px;
+            --focus-ring: 0 0 0 3px rgba(45, 212, 191, 0.45);
+        }
+
+        /* ===== RESET ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-mid);
+            background: var(--white);
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: .25s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        /* ===== SKIP LINK ===== */
+        .skip-link {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            background: var(--navy);
+            color: #fff;
+            padding: 10px 18px;
+            z-index: 9999;
+            transition: top .3s;
+            border-radius: 0 0 8px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        *:focus-visible {
+            outline: none;
+            box-shadow: var(--focus-ring);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 28px;
+            background: var(--teal);
+            color: var(--navy);
+            font-weight: 700;
+            font-size: .95rem;
+            border-radius: 50px;
+            border: none;
+            transition: all .3s ease;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            background: var(--teal-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(45, 212, 191, .35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--navy);
+            color: var(--navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--navy);
+            color: #fff;
+            border-color: var(--navy);
+            box-shadow: none;
+        }
+
+        .btn-white {
+            background: #fff;
+            color: var(--navy);
+        }
+
+        .btn-white:hover {
+            background: var(--bg-page);
+        }
+
+        .btn:focus-visible {
+            box-shadow: var(--focus-ring);
+        }
+
+        /* ===== HEADER / NAV ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(45, 212, 191, .15);
+            padding: 14px 0;
+            transition: box-shadow .3s;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 38px;
+            width: auto;
+        }
+
+        .logo span {
+            letter-spacing: -.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: .92rem;
+            color: var(--text-mid);
+        }
+
+        .nav-links a:hover {
+            color: var(--teal-dark);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-login {
+            font-weight: 600;
+            font-size: .92rem;
+            color: var(--text-mid);
+            background: none;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 50px;
+            transition: .25s;
+        }
+
+        .btn-login:hover {
+            color: var(--navy);
+            background: rgba(0, 0, 0, .04);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.4rem;
+            background: none;
+            border: none;
+            padding: 8px;
+            color: var(--navy);
+        }
+
+        /* ===== PAGE BACKGROUND ===== */
+        .page-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(135deg, #d4f5f1 0%, #e8faf8 25%, #f5fdfc 50%, #ffffff 75%);
+        }
+
+        .page-bg::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(45, 212, 191, .18) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .page-bg::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(45, 212, 191, .10) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        /* ===== HERO ===== */
+        #home {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(45, 212, 191, .15);
+            color: var(--teal-dark);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: .82rem;
+            font-weight: 600;
+            letter-spacing: .3px;
+            margin-bottom: 20px;
+        }
+
+        .hero-tag::before {
+            content: '✦';
+            font-size: .7rem;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            line-height: 1.1;
+            color: var(--navy);
+            font-weight: 800;
+            margin-bottom: 22px;
+            letter-spacing: -1px;
+        }
+
+        .hero-content h1 span {
+            color: var(--teal-dark);
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-mid);
+            margin-bottom: 36px;
+            font-weight: 400;
+            max-width: 520px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(45, 212, 191, .2);
+        }
+
+        .hero-stat-val {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .hero-stat-label {
+            font-size: .8rem;
+            color: var(--text-soft);
+            font-weight: 500;
+        }
+
+        /* Hero visual */
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-visual-box {
+            border-radius: 24px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #c8f0ec 0%, #daf5f2 50%, #e8f8f6 100%);
+            padding: 4px;
+            box-shadow: 0 24px 64px rgba(45, 212, 191, .2), 0 4px 16px rgba(0, 0, 0, .08);
+        }
+
+        .hero-visual-inner {
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(160deg, #b2ede8 0%, #cdf3ef 35%, #e0f9f7 70%, #f0fefd 100%);
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* SVG wave animation */
+        .wave-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(12px);
+            border-radius: 14px;
+            padding: 14px 18px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-badge-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .hero-badge-text strong {
+            display: block;
+            font-size: .9rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .hero-badge-text span {
+            font-size: .75rem;
+            color: var(--text-soft);
+        }
+
+        /* ===== SECTION COMMONS ===== */
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(45, 212, 191, .12);
+            color: var(--teal-dark);
+            padding: 5px 16px;
+            border-radius: 50px;
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .4px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: var(--navy);
+            font-weight: 800;
+            margin-bottom: 14px;
+            letter-spacing: -.5px;
+        }
+
+        .section-header p {
+            color: var(--text-soft);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== SERVICES ===== */
+        #services {
+            background: transparent;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--glass-bg);
+            border: 1.5px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-card);
+            transition: all .35s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--teal), var(--teal-dark));
+            opacity: 0;
+            transition: .35s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(45, 212, 191, .4);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(45, 212, 191, .15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: .35s;
+        }
+
+        .service-card:hover .service-icon-wrap {
+            background: rgba(45, 212, 191, .25);
+        }
+
+        .service-icon-wrap svg {
+            width: 26px;
+            height: 26px;
+            color: var(--teal-dark);
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-soft);
+            font-size: .93rem;
+            margin-bottom: 24px;
+            flex-grow: 1;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            margin-bottom: 28px;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: .88rem;
+            color: var(--text-mid);
+            margin-bottom: 9px;
+        }
+
+        .service-features li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--teal);
+            flex-shrink: 0;
+        }
+
+        .service-card .btn {
+            align-self: flex-start;
+            padding: 10px 22px;
+            font-size: .88rem;
+        }
+
+        /* ===== METHODE ===== */
+        #method {
+            background: linear-gradient(135deg, #0d1f3c 0%, #1e3a5f 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #method::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(45, 212, 191, .12) 0%, transparent 65%);
+            border-radius: 50%;
+        }
+
+        #method .section-header h2 {
+            color: #fff;
+        }
+
+        #method .section-header p {
+            color: rgba(255, 255, 255, .6);
+        }
+
+        #method .section-tag {
+            background: rgba(45, 212, 191, .2);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            position: relative;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(45, 212, 191, .3), transparent);
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            backdrop-filter: blur(10px);
+            transition: .3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-card:hover {
+            background: rgba(255, 255, 255, .08);
+            border-color: rgba(45, 212, 191, .3);
+            transform: translateY(-4px);
+        }
+
+        .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+            color: var(--navy);
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .step-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            font-size: .88rem;
+            color: rgba(255, 255, 255, .6);
+            line-height: 1.7;
+        }
+
+        /* ===== TARIFS ===== */
+        #pricing {
+            background: transparent;
+        }
+
+        .pricing-intro {
+            max-width: 680px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .pricing-intro p {
+            color: var(--text-soft);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            align-items: start;
+        }
+
+        .price-card {
+            background: var(--glass-bg);
+            border: 1.5px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 40px 36px;
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-card);
+            transition: all .3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .price-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .price-card.popular {
+            background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 100%);
+            color: #fff;
+            border-color: rgba(45, 212, 191, .4);
+            box-shadow: 0 24px 64px rgba(13, 31, 60, .25), 0 4px 16px rgba(45, 212, 191, .2);
+            transform: translateY(-8px);
+        }
+
+        .price-card.popular:hover {
+            transform: translateY(-14px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, var(--teal), var(--teal-dark));
+            color: var(--navy);
+            font-weight: 700;
+            font-size: .78rem;
+            padding: 5px 18px;
+            border-radius: 50px;
+            white-space: nowrap;
+            letter-spacing: .3px;
+        }
+
+        .price-card-name {
+            font-size: .85rem;
+            font-weight: 600;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            color: var(--text-soft);
+            margin-bottom: 10px;
+        }
+
+        .price-card.popular .price-card-name {
+            color: rgba(255, 255, 255, .6);
+        }
+
+        .price-amount {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 6px;
+            letter-spacing: -1px;
+        }
+
+        .price-amount .currency {
+            font-size: 1.2rem;
+            font-weight: 600;
+            vertical-align: super;
+            margin-right: 2px;
+        }
+
+        .price-card.popular .price-amount {
+            color: var(--teal);
+        }
+
+        .price-desc {
+            font-size: .85rem;
+            color: var(--text-soft);
+            margin-bottom: 28px;
+        }
+
+        .price-card.popular .price-desc {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        .price-divider {
+            height: 1px;
+            background: rgba(0, 0, 0, .08);
+            margin-bottom: 24px;
+        }
+
+        .price-card.popular .price-divider {
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .price-features {
+            flex-grow: 1;
+            margin-bottom: 32px;
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: .9rem;
+            color: var(--text-mid);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .price-card.popular .price-features li {
+            color: rgba(255, 255, 255, .8);
+        }
+
+        .price-features li svg {
+            width: 18px;
+            height: 18px;
+            color: var(--teal-dark);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .price-card.popular .price-features li svg {
+            color: var(--teal);
+        }
+
+        .price-cta {
+            display: block;
+            text-align: center;
+        }
+
+        .price-cta .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-soft);
+            font-size: .9rem;
+        }
+
+        .pricing-note a {
+            color: var(--teal-dark);
+            font-weight: 600;
+        }
+
+        .pricing-note a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== CONTACT ===== */
+        #contact {
+            background: transparent;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info-block h2 {
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            color: var(--navy);
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -.5px;
+        }
+
+        .contact-info-block>p {
+            color: var(--text-soft);
+            margin-bottom: 36px;
+            line-height: 1.7;
+        }
+
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            font-size: .95rem;
+            color: var(--text-mid);
+        }
+
+        .contact-details a:hover {
+            color: var(--teal-dark);
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 11px;
+            background: rgba(45, 212, 191, .12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--teal-dark);
+        }
+
+        /* Form */
+        .contact-form {
+            background: var(--glass-bg);
+            border: 1.5px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 40px;
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 600;
+            font-size: .87rem;
+            color: var(--navy);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: .92rem;
+            color: var(--text-dark);
+            background: rgba(255, 255, 255, .8);
+            transition: border-color .25s, box-shadow .25s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--teal);
+            box-shadow: var(--focus-ring);
+            outline: none;
+            background: #fff;
+        }
+
+        .form-group textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .form-submit .btn {
+            width: 100%;
+            justify-content: center;
+            padding: 14px;
+        }
+
+        .form-note {
+            margin-top: 12px;
+            font-size: .8rem;
+            color: var(--text-soft);
+            text-align: center;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(160deg, #060f1e 0%, #0d1f3c 100%);
+            color: rgba(255, 255, 255, .6);
+            padding: 64px 0 24px;
+            font-size: .9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(45, 212, 191, .06) 0%, transparent 70%);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .footer-logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand .footer-logo img {
+            height: 34px;
+        }
+
+        .footer-brand p {
+            line-height: 1.7;
+            max-width: 280px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: .95rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--teal);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, .6);
+            font-size: .9rem;
+            transition: .25s;
+        }
+
+        .social-btn:hover {
+            background: rgba(45, 212, 191, .2);
+            color: var(--teal);
+            border-color: rgba(45, 212, 191, .3);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom a {
+            color: var(--teal);
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 36px;
+            }
+        }
+
+        @media(max-width:900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                text-align: center;
+            }
+
+            .hero-subtitle {
+                margin: 0 auto 36px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media(max-width:768px) {
+
+            .nav-links,
+            .nav-actions {
+                display: none;
+                flex-direction: column;
+            }
+
+            .nav-links.active {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, .97);
+                backdrop-filter: blur(16px);
+                padding: 20px 24px;
+                box-shadow: 0 16px 32px rgba(0, 0, 0, .1);
+                border-top: 1px solid rgba(45, 212, 191, .15);
+                gap: 16px;
+            }
+
+            .nav-links.active~.nav-actions {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media(max-width:480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                padding: 28px 24px;
+            }
+
+            .price-card {
+                padding: 32px 24px;
+            }
+
+            .contact-form {
+                padding: 28px 20px;
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: .6;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes wave-flow {
+            0% {
+                stroke-dashoffset: 0;
+            }
+
+            100% {
+                stroke-dashoffset: -300;
+            }
+        }
+
+        .float-anim {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- ===== HEADER ===== -->
+    <header role="banner" id="main-header">
+        <div class="container nav-container">
+            <a href="#home" class="logo" aria-label="Refontiq - Accueil">
+                <img src="https://z-cdn-media.chatglm.cn/files/c8f66453-6c42-4d14-a71f-f1f84e59b235.png?auth_key=1874613005-32f082b754fd4d41b26cbd5867cb6699-0-43ffa7dd5d1f36453e468f5ed24eb3b5"
+                    alt="Refontiq" width="38" height="38">
+            </a>
+            <nav role="navigation" aria-label="Navigation principale">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#method">Méthode</a></li>
+                    
+                    <li><a href="#contact">Contacts</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="#contact" class="btn" style="padding:10px 22px;font-size:.88rem;">Demander un audit</a>
+            </div>
+            <button class="mobile-toggle" aria-expanded="false" aria-controls="nav-links"
+                aria-label="Ouvrir le menu">☰</button>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ===== HERO ===== -->
+        <section id="home" aria-labelledby="hero-title">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-tag">Agence Web Premium · Abidjan</div>
+                    <h1 id="hero-title">Création de Sites Web<br><span>Haute Performance</span></h1>
+                    <p class="hero-subtitle">Ne vous contentez plus d'un simple template. Chez Refontiq, nous concevons
+                        des sites uniques, ultra-rapides et optimisés Mobile-First pour booster votre business en Côte
+                        d'Ivoire.</p>
+                    <div class="hero-buttons">
+                        <a href="#pricing" class="btn">Propulsez votre projet</a>
+                        <a href="#method" class="btn btn-outline">Comment on travaille</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div>
+                            <div class="hero-stat-val">50+</div>
+                            <div class="hero-stat-label">Projets livrés</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat-val">7j</div>
+                            <div class="hero-stat-label">Délai moyen</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat-val">100%</div>
+                            <div class="hero-stat-label">Clients satisfaits</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual (SVG animated) -->
+                <div class="hero-visual">
+                    <div class="hero-visual-box float-anim">
+                        <div class="hero-visual-inner">
+                            <svg class="wave-svg" viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <radialGradient id="bg-grad" cx="50%" cy="50%" r="70%">
+                                        <stop offset="0%" stop-color="#b2ede8" />
+                                        <stop offset="100%" stop-color="#e8f8f6" />
+                                    </radialGradient>
+                                    <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="rgba(45,212,191,0)" />
+                                        <stop offset="40%" stop-color="rgba(45,212,191,0.7)" />
+                                        <stop offset="100%" stop-color="rgba(20,184,166,0.3)" />
+                                    </linearGradient>
+                                    <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="rgba(255,255,255,0.3)" />
+                                        <stop offset="50%" stop-color="rgba(255,255,255,0.8)" />
+                                        <stop offset="100%" stop-color="rgba(45,212,191,0.2)" />
+                                    </linearGradient>
+                                    <filter id="glow">
+                                        <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                                        <feMerge>
+                                            <feMergeNode in="coloredBlur" />
+                                            <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                <rect width="560" height="420" fill="url(#bg-grad)" />
+
+                                <!-- Wave paths -->
+                                <path d="M-40,280 C80,240 160,320 280,270 S440,200 600,230" fill="none"
+                                    stroke="url(#wave1)" stroke-width="2.5" opacity="0.6">
+                                    <animate attributeName="d" dur="8s" repeatCount="indefinite" values="M-40,280 C80,240 160,320 280,270 S440,200 600,230;
+                                                M-40,260 C80,220 180,300 300,255 S460,190 620,215;
+                                                M-40,280 C80,240 160,320 280,270 S440,200 600,230" />
+                                </path>
+                                <path d="M-40,220 C100,180 200,260 320,210 S480,150 620,180" fill="none"
+                                    stroke="url(#wave1)" stroke-width="3" opacity="0.8" filter="url(#glow)">
+                                    <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M-40,220 C100,180 200,260 320,210 S480,150 620,180;
+                                                M-40,240 C80,200 220,280 340,225 S500,165 640,195;
+                                                M-40,220 C100,180 200,260 320,210 S480,150 620,180" />
+                                </path>
+                                <path d="M-40,310 C60,270 160,350 260,295 S420,235 580,260" fill="none"
+                                    stroke="url(#wave2)" stroke-width="2" opacity="0.5">
+                                    <animate attributeName="d" dur="12s" repeatCount="indefinite" values="M-40,310 C60,270 160,350 260,295 S420,235 580,260;
+                                                M-40,290 C80,255 180,330 280,280 S440,220 600,245;
+                                                M-40,310 C60,270 160,350 260,295 S420,235 580,260" />
+                                </path>
+                                <path d="M-40,170 C120,130 240,200 380,155 S540,100 660,135" fill="none"
+                                    stroke="rgba(45,212,191,0.4)" stroke-width="1.5" opacity="0.6">
+                                    <animate attributeName="d" dur="14s" repeatCount="indefinite" values="M-40,170 C120,130 240,200 380,155 S540,100 660,135;
+                                                M-40,190 C100,150 260,215 400,170 S560,115 680,148;
+                                                M-40,170 C120,130 240,200 380,155 S540,100 660,135" />
+                                </path>
+
+                                <!-- Floating dots/nodes -->
+                                <circle cx="140" cy="220" r="6" fill="#2dd4bf" opacity="0.9" filter="url(#glow)">
+                                    <animate attributeName="cy" dur="8s" repeatCount="indefinite"
+                                        values="220;208;220" />
+                                </circle>
+                                <circle cx="280" cy="210" r="10" fill="#14b8a6" opacity="0.9" filter="url(#glow)">
+                                    <animate attributeName="cy" dur="10s" repeatCount="indefinite"
+                                        values="210;195;210" />
+                                </circle>
+                                <circle cx="420" cy="150" r="7" fill="#2dd4bf" opacity="0.8">
+                                    <animate attributeName="cy" dur="12s" repeatCount="indefinite"
+                                        values="150;138;150" />
+                                </circle>
+                                <circle cx="490" cy="270" r="5" fill="#99f6e4" opacity="0.9">
+                                    <animate attributeName="cy" dur="9s" repeatCount="indefinite"
+                                        values="270;260;270" />
+                                </circle>
+                                <circle cx="80" cy="295" r="4" fill="#2dd4bf" opacity="0.7">
+                                    <animate attributeName="cy" dur="11s" repeatCount="indefinite"
+                                        values="295;283;295" />
+                                </circle>
+                                <circle cx="350" cy="310" r="8" fill="#14b8a6" opacity="0.7">
+                                    <animate attributeName="cy" dur="7s" repeatCount="indefinite"
+                                        values="310;298;310" />
+                                </circle>
+
+                                <!-- Connection lines -->
+                                <line x1="140" y1="220" x2="280" y2="210" stroke="#2dd4bf" stroke-width="1"
+                                    opacity="0.4" />
+                                <line x1="280" y1="210" x2="420" y2="150" stroke="#2dd4bf" stroke-width="1"
+                                    opacity="0.4" />
+                                <line x1="420" y1="150" x2="490" y2="270" stroke="#2dd4bf" stroke-width="1"
+                                    opacity="0.3" />
+                                <line x1="80" y1="295" x2="140" y2="220" stroke="#2dd4bf" stroke-width="1"
+                                    opacity="0.3" />
+                                <line x1="350" y1="310" x2="490" y2="270" stroke="#2dd4bf" stroke-width="1"
+                                    opacity="0.3" />
+
+                                <!-- Glow center orb -->
+                                <circle cx="280" cy="210" r="60" fill="rgba(45,212,191,0.08)">
+                                    <animate attributeName="r" dur="4s" repeatCount="indefinite" values="60;75;60" />
+                                    <animate attributeName="opacity" dur="4s" repeatCount="indefinite"
+                                        values="0.08;0.04;0.08" />
+                                </circle>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Floating badge -->
+                    <div class="hero-badge">
+                        <div class="hero-badge-icon">🚀</div>
+                        <div class="hero-badge-text">
+                            <strong>Livraison rapide</strong>
+                            <span>7 à 14 jours ouvrables</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICES ===== -->
+        <section id="services" class="section-padding" aria-labelledby="services-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Nos Services</span>
+                    <h2 id="services-title">Ce que nous faisons</h2>
+                    <p>Des solutions web complètes pour transformer votre présence digitale et accélérer votre
+                        croissance.</p>
+                </div>
+
+                <div class="services-grid" role="list">
+
+                    <!-- Service 1 -->
+                    <article class="service-card" role="listitem">
+                        <div class="service-icon-wrap">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3>Création de Site Web</h3>
+                        <p>Sites vitrines, e-commerce, portfolios. Chaque projet est unique, conçu sur-mesure pour votre
+                            marque.</p>
+                        <ul class="service-features" aria-label="Caractéristiques">
+                            <li>Design 100% sur-mesure</li>
+                            <li>Mobile-First & responsive</li>
+                            <li>Optimisé SEO dès le départ</li>
+                        </ul>
+                        <a href="#pricing" class="btn">Commencer</a>
+                    </article>
+
+                    <!-- Service 2 -->
+                    <article class="service-card" role="listitem">
+                        <div class="service-icon-wrap">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3>Refonte & Optimisation</h3>
+                        <p>Votre site actuel est lent ou vieilli ? On le transforme en un outil de performance et de
+                            conversion.</p>
+                        <ul class="service-features" aria-label="Caractéristiques">
+                            <li>Audit complet de l'existant</li>
+                            <li>Vitesse & Core Web Vitals</li>
+                            <li>Performance & Conversion</li>
+                        </ul>
+                        <a href="#contact" class="btn">Commencer</a>
+                    </article>
+
+                    <!-- Service 3 -->
+                    <article class="service-card" role="listitem">
+                        <div class="service-icon-wrap">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                        </div>
+                        <h3>Automatisation</h3>
+                        <p>Workflows métier automatisés. Moins de tâches répétitives, plus de croissance pour votre
+                            entreprise.</p>
+                        <ul class="service-features" aria-label="Caractéristiques">
+                            <li>Gestion CRM</li>
+                            <li>Notifications automatiques</li>
+                            <li>Intégrations API sur-mesure</li>
+                        </ul>
+                        <a href="#contact" class="btn">Commencer</a>
+                    </article>
+
+                    <!-- Service 4 -->
+                    <article class="service-card" role="listitem">
+                        <div class="service-icon-wrap">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                        </div>
+                        <h3>Support Dédié</h3>
+                        <p>Une relation de confiance sur le long terme. On ne disparaît pas après la livraison.</p>
+                        <ul class="service-features" aria-label="Caractéristiques">
+                            <li>Maintenance & Sécurité</li>
+                            <li>Disponibilité réactive</li>
+                            <li>Formation aux outils</li>
+                        </ul>
+                        <a href="#contact" class="btn">Commencer</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== METHODE ===== -->
+        <section id="method" class="section-padding" aria-labelledby="method-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Notre Processus</span>
+                    <h2 id="method-title">Comment on travaille</h2>
+                    <p>Un processus rodé pour des livrables sans surprise, dans les délais annoncés.</p>
+                </div>
+
+                <div class="steps-grid" role="list" aria-label="Étapes de notre méthode">
+                    <article class="step-card" role="listitem">
+                        <div class="step-num">01</div>
+                        <h3>Audit & Stratégie</h3>
+                        <p>Analyse de l'existant, objectifs, benchmark concurrents. On comprend avant d'agir.</p>
+                    </article>
+                    <article class="step-card" role="listitem">
+                        <div class="step-num">02</div>
+                        <h3>Design & Prototype</h3>
+                        <p>Maquettes validées avec vous. Zéro surprise au moment du développement.</p>
+                    </article>
+                    <article class="step-card" role="listitem">
+                        <div class="step-num">03</div>
+                        <h3>Développement</h3>
+                        <p>Code propre, performant, maintenable. Chaque ligne est intentionnelle.</p>
+                    </article>
+                    <article class="step-card" role="listitem">
+                        <div class="step-num">04</div>
+                        <h3>Livraison & Suivi</h3>
+                        <p>Mise en production, formation, support continu. On reste là.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TARIFS ===== -->
+        <section id="pricing" class="section-padding" aria-labelledby="pricing-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Tarifs</span>
+                    <h2 id="pricing-title">Tarifs Transparents</h2>
+                    <p>Des packs clairs conçus pour des résultats mesurables. Des besoins spécifiques ? On développe
+                        aussi des projets sur-mesure.</p>
+                </div>
+
+                <div class="pricing-grid" role="list" aria-label="Nos offres tarifaires">
+
+                    <!-- Pack Starter -->
+                    <article class="price-card" role="listitem">
+                        <div class="price-card-name">Pack Starter</div>
+                        <div class="price-amount"><span class="currency">75k</span>FCFA</div>
+                        <div class="price-desc">Idéal pour démarrer votre présence en ligne</div>
+                        <div class="price-divider"></div>
+                        <ul class="price-features" aria-label="Fonctionnalités incluses">
+                            <li>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                Site vitrine one-page responsive
+                            </li>
+                            <li>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                Formulaire de contact intégré
+                            </li>
+                            <li>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                Optimisation SEO de base
+                            </li>
+                            <li>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                Livraison en 7 jours
+                            </li>
+                        </ul>
+                        <div class="price-cta">
+                            <a href="#contact" class="btn btn-outline">Choisir ce pack</a>
+                        </div>
+                    </article>
+
+                    <!-- Pack Pro (popular) -->
+                    <article class="price-card popular" role="listitem">
+                        <div class="popular-badge">⭐ Le plus populaire</div>
+                        <div class="price-card-name">Pack Pro</div>
+                        <div class="price-amount"><span class="currency">150k</span>FCFA</div>
+                        <div class="price-desc">La solution complète pour les PME ambitieuses</div>
+                        <div class="price-divider"></div>
+                        <ul class="price-features" aria-label="Fonctionnalités incluses">
+                            <li>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                Site multi-pages (jusqu'à 5 pages)
+                            </li>
+                            <li>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                SEO avancé + Analytics
+                            </li>
+                            <li>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                Optimisation performances
+                            </li>
+                            <li>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                1 mois de support inclus
+                            </li>
+                            <li>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                Livraison en 10-14 jours
+                            </li>
+                        </ul>
+                        <div class="price-cta">
+                            <a href="#contact" class="btn btn-white">Choisir ce pack</a>
+                        </div>
+                    </article>
+
+                    <!-- Pack Premium -->
+                    <article class="price-card" role="listitem">
+                        <div class="price-card-name">Pack Premium</div>
+                        <div class="price-amount" style="font-size:1.6rem;letter-spacing:-.5px;">Sur devis</div>
+                        <div class="price-desc">E-commerce, applications web, projets complexes</div>
+                        <div class="price-divider"></div>
+                        <ul class="price-features" aria-label="Fonctionnalités incluses">
+                            <li>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                Développement 100% sur-mesure
+                            </li>
+                            <li>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                E-commerce & passerelles de paiement
+                            </li>
+                            <li>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                Automatisation & intégrations API
+                            </li>
+                            <li>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                Support & maintenance longue durée
+                            </li>
+                        </ul>
+                        <div class="price-cta">
+                            <a href="#contact" class="btn btn-outline">Demander un devis</a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <p class="pricing-note">
+                    Besoin d'une offre spécifique ? <a href="tarifs.html">Voir toutes nos offres →</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="contact" class="section-padding" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info-block">
+                        <span class="section-tag">Contact</span>
+                        <h2 id="contact-title">Prêt à transformer votre présence digitale ?</h2>
+                        <p>Contactez-nous pour une consultation gratuite à Abidjan. Nous répondons sous 24h.</p>
+
+                        <ul class="contact-details" aria-label="Informations de contact">
+                            <li>
+                                <div class="contact-icon">
+                                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <span>Abidjan, Côte d'Ivoire</span>
+                            </li>
+                            <li>
+                                <div class="contact-icon">
+                                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <a href="mailto:contact@refontiq.com">contact@refontiq.com</a>
+                            </li>
+                            <li>
+                                <div class="contact-icon">
+                                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                </div>
+                                <a href="tel:+2250100372900">+225 01 00 37 29 00</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form class="contact-form" id="contact-form" action="#" method="POST"
+                        aria-label="Formulaire de contact">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nom complet <span aria-hidden="true">*</span></label>
+                                <input type="text" id="name" name="name" required placeholder="Votre nom"
+                                    autocomplete="name" aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email <span aria-hidden="true">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="votre@email.com"
+                                    autocomplete="email" aria-required="true">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+225 07 00 00 00 00"
+                                autocomplete="tel">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service souhaité</label>
+                            <select id="service" name="service">
+                                <option value="">Sélectionnez une option</option>
+                                <option value="starter">Pack Starter (75k FCFA)</option>
+                                <option value="pro">Pack Pro (150k FCFA)</option>
+                                <option value="premium">Pack Premium (sur devis)</option>
+                                <option value="refonte">Refonte de site existant</option>
+                                <option value="autre">Autre demande</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Votre projet <span aria-hidden="true">*</span></label>
+                            <textarea id="message" name="message" required
+                                placeholder="Décrivez brièvement votre projet..." aria-required="true"></textarea>
+                        </div>
+
+                        <div class="form-submit">
+                            <button type="submit" class="btn">Envoyer ma demande →</button>
+                        </div>
+                        <p class="form-note">* Champs obligatoires · Réponse sous 24h</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="https://z-cdn-media.chatglm.cn/files/c8f66453-6c42-4d14-a71f-f1f84e59b235.png?auth_key=1874613005-32f082b754fd4d41b26cbd5867cb6699-0-43ffa7dd5d1f36453e468f5ed24eb3b5"
+                            alt="Refontiq" width="34" height="34">
+                    </div>
+                    <p>Agence web haute performance à Abidjan. Design, Code, Stratégie. On crée des sites qui
+                        travaillent pour vous.</p>
+                    <div class="footer-social" aria-label="Réseaux sociaux">
+                        <a href="https://facebook.com/refontiq" class="social-btn" aria-label="Facebook" target="_blank"
+                            rel="noopener">f</a>
+                        <a href="https://linkedin.com/company/refontiq" class="social-btn" aria-label="LinkedIn"
+                            target="_blank" rel="noopener">in</a>
+                        <a href="https://wa.me/2250100372900" class="social-btn" aria-label="WhatsApp" target="_blank"
+                            rel="noopener">W</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#method">Méthode</a></li>
+                        <li><a href="#pricing">Tarifs</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="/mentions-legales">Mentions légales</a></li>
+                        <li><a href="/politique-confidentialite">Confidentialité</a></li>
+                        <li><a href="/cgv">CGV</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Abidjan, Côte d'Ivoire</li>
+                        <li><a href="mailto:contact@refontiq.com">contact@refontiq.com</a></li>
+                        <li><a href="tel:+2250100372900">+225 01 00 37 29 00</a></li>
+                        <li>Lun–Ven : 08h–18h</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2024</span> Refontiq. Tous droits réservés.</p>
+                <p><a href="/mentions-legales">Mentions légales</a> · <a href="/politique-confidentialite">Politique de
+                        confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 20);
+        }, { passive: true });
+
+        // Mobile Menu
+        const toggle = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        toggle.addEventListener('click', () => {
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', !expanded);
+            toggle.textContent = expanded ? '☰' : '✕';
+            navLinks.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.textContent = '☰';
+            });
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.textContent = '☰';
+                toggle.focus();
+            }
+        });
+
+        // Form Submission
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', async e => {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const orig = btn.textContent;
+            btn.textContent = 'Envoi en cours...';
+            btn.disabled = true;
+            try {
+                await new Promise(r => setTimeout(r, 1500));
+                btn.textContent = '✓ Message envoyé !';
+                btn.style.background = '#10b981';
+                form.reset();
+                setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; }, 3000);
+            } catch {
+                btn.textContent = 'Erreur, réessayez';
+                btn.style.background = '#ef4444';
+                setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; }, 3000);
+            }
+        });
+
+        // Footer year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    e.preventDefault();
+                    const t = document.querySelector(a.getAttribute('href'));
+                    if (t) t.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
