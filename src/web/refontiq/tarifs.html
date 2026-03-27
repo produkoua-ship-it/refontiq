@@ -1,0 +1,857 @@
+<!--
+  Refontiq - Page Tarifs
+  Design: refontiq_redesign v2.0
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs | Refontiq - Création de Sites Web à Abidjan</title>
+    <meta name="description"
+        content="Découvrez nos tarifs transparents pour la création de sites web à Abidjan. Packs Starter, Pro et Premium.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://refontiq.com/tarifs">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <meta name="theme-color" content="#0f172a">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #2dd4bf;
+            --secondary-dark: #14b8a6;
+            --accent: #f59e0b;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --radius: 16px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        nav a:not(.btn)::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+
+        nav a:not(.btn):hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--secondary);
+            color: var(--primary);
+            font-weight: 700;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(45, 212, 191, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+            padding: 5px;
+        }
+
+        /* Hero */
+        .hero-pricing {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-pricing::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-pricing h1 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .hero-pricing h1 span {
+            color: var(--secondary-dark);
+        }
+
+        .hero-pricing h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--secondary-dark));
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .hero-pricing .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow);
+        }
+
+        .trust-badge svg {
+            color: var(--secondary-dark);
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Pricing Grid */
+        .pricing-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .price-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .price-card.popular {
+            border-color: var(--secondary);
+            transform: scale(1.02);
+        }
+
+        .price-card.popular:hover {
+            transform: scale(1.02) translateY(-10px);
+        }
+
+        .badge-popular {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .price-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .price-card .card-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .price-card .price {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .price-card .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .price-card .price-info {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        .price-card .features {
+            list-style: none;
+            flex-grow: 1;
+            margin-bottom: 30px;
+        }
+
+        .price-card .features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .price-card .features li svg {
+            color: var(--secondary-dark);
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .price-card .btn {
+            width: 100%;
+        }
+
+        /* Included Section */
+        .included-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--secondary-dark));
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .included-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--radius);
+            background: var(--bg-light);
+            transition: all 0.3s ease;
+        }
+
+        .included-card:hover {
+            background: white;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .included-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .included-card h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .included-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .cta-section p {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .cta-buttons .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .cta-buttons .btn-whatsapp:hover {
+            background: #128C7E;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+            color: #94a3b8;
+            padding: 50px 0 30px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 30px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .footer-brand p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .footer-bottom a {
+            color: var(--secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .price-card.popular {
+                transform: scale(1);
+            }
+
+            .price-card.popular:hover {
+                transform: translateY(-10px);
+            }
+
+            .included-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-pricing {
+                padding: 120px 0 40px;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://z-cdn-media.chatglm.cn/files/c8f66453-6c42-4d14-a71f-f1f84e59b235.png?auth_key=1874613005-32f082b754fd4d41b26cbd5867cb6699-0-43ffa7dd5d1f36453e468f5ed24eb3b5"
+                    alt="Refontiq" width="40" height="40">
+                <span>REFONTIQ</span>
+            </a>
+            <nav id="nav-menu">
+                <a href="index.html">Accueil</a>
+                <a href="mentions-legales.html">Mentions légales</a>
+                <a href="politique-confidentialite.html">Confidentialité</a>
+                <a href="cgv.html">CGV</a>
+                <a href="tarifs.html" class="btn">Tarifs</a>
+            </nav>
+            <button class="mobile-toggle" onclick="document.getElementById('nav-menu').classList.toggle('active')"
+                aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-pricing">
+            <div class="container">
+                <h1>Tarifs <span>transparents</span> · Aucun frais caché</h1>
+                <p class="subtitle">Des offres claires pour chaque ambition. Sites web professionnels livrés en moins de
+                    2 semaines à Abidjan.</p>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Responsive & Mobile-first
+                    </div>
+                    <div class="trust-badge">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Google Maps intégré
+                    </div>
+                    <div class="trust-badge">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Formulaire de contact
+                    </div>
+                    <div class="trust-badge">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Support 1 mois offert
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="container">
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Starter</h3>
+                        <p class="card-desc">Idéal pour lancer rapidement votre présence en ligne avec l'essentiel.</p>
+                        <div class="price">75 000 <span>FCFA</span></div>
+                        <p class="price-info">Landing page · 1 page · Livraison en 5 jours</p>
+                        <ul class="features">
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>1 page landing page professionnelle</li>
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>Design sur-mesure — non-template</li>
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>Mobile-first & responsive</li>
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>Formulaire de contact inclus</li>
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>Google Maps intégré</li>
+                        </ul>
+                        <a href="index.html#contact" class="btn btn-outline">Démarrer avec Starter</a>
+                    </div>
+
+                    <div class="price-card popular">
+                        <div class="badge-popular">⭐ Le plus populaire</div>
+                        <div class="card-icon">⭐</div>
+                        <h3>Pro</h3>
+                        <p class="card-desc">La solution complète pour les PME, boutiques et indépendants.</p>
+                        <div class="price">150 000 <span>FCFA</span></div>
+                        <p class="price-info">Site 5 pages · Hébergement 1 an inclus · 10 jours</p>
+                        <ul class="features">
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>5 pages (Accueil, À propos, Services, Contact…)</li>
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>Hébergement 1 an offert</li>
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>Fiche Google Business configurée</li>
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>SEO de base intégré</li>
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>Support 1 mois après livraison</li>
+                        </ul>
+                        <a href="index.html#contact" class="btn">Choisir l'offre Pro</a>
+                    </div>
+
+                    <div class="price-card">
+                        <div class="card-icon">🏆</div>
+                        <h3>Premium</h3>
+                        <p class="card-desc">Pour les hôtels, agences immobilières, écoles et structures exigeantes.</p>
+                        <div class="price">250 000 <span>FCFA</span></div>
+                        <p class="price-info">Site complet + Galerie · Portfolio · 14 jours</p>
+                        <ul class="features">
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>Site complet multi-pages sur-mesure</li>
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>Galerie photos/vidéos intégrée</li>
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>Hébergement 1 an + nom de domaine</li>
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>SEO avancé + Google Business</li>
+                            <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>Support 2 mois après livraison</li>
+                        </ul>
+                        <a href="index.html#contact" class="btn btn-outline">Démarrer en Premium</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="included-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Inclus partout</h2>
+                    <p>Dans chaque livraison, vous bénéficiez de ces avantages</p>
+                </div>
+                <div class="included-grid">
+                    <div class="included-card">
+                        <div class="icon">📱</div>
+                        <h4>100% Mobile</h4>
+                        <p>Chaque site est pensé mobile-first. Il s'affiche parfaitement sur tous les écrans.</p>
+                    </div>
+                    <div class="included-card">
+                        <div class="icon">🗺️</div>
+                        <h4>Google Maps</h4>
+                        <p>Vos clients trouvent votre adresse directement sur votre site, en un clic.</p>
+                    </div>
+                    <div class="included-card">
+                        <div class="icon">✉️</div>
+                        <h4>Formulaire de contact</h4>
+                        <p>Un formulaire fonctionnel qui envoie les messages directement dans votre boîte mail ou
+                            WhatsApp.</p>
+                    </div>
+                    <div class="included-card">
+                        <div class="icon">⚡</div>
+                        <h4>Vitesse optimisée</h4>
+                        <p>Code léger, images compressées. Score de performance 90+ sur Google PageSpeed.</p>
+                    </div>
+                    <div class="included-card">
+                        <div class="icon">🔐</div>
+                        <h4>HTTPS & Sécurité</h4>
+                        <p>Certificat SSL inclus. Votre site est sécurisé et référencé comme fiable par Google.</p>
+                    </div>
+                    <div class="included-card">
+                        <div class="icon">🤝</div>
+                        <h4>Suivi après livraison</h4>
+                        <p>On ne disparaît pas. Support disponible pour corrections et ajustements post-livraison.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Prêt à lancer votre site ?</h2>
+                <p>Parlons-en aujourd'hui. Audit gratuit, sans engagement. On analyse votre projet et vous propose
+                    l'offre la mieux adaptée.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/2250100372900" class="btn btn-whatsapp" target="_blank"
+                        rel="noopener">WhatsApp — Devis gratuit</a>
+                    <a href="index.html#contact" class="btn">Formulaire de contact →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>REFONTIQ</h3>
+                <p>Agence web haute performance à Abidjan. Sites modernes, rapides et optimisés.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="tarifs.html">Tarifs</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                    <li><a href="cgv.html">CGV</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Refontiq. Tous droits réservés. | Abidjan, Côte d'Ivoire</p>
+        </div>
+    </footer>
+</body>
+
+</html>

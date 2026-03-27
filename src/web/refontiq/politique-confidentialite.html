@@ -1,0 +1,559 @@
+<!--
+  Refontiq - Politique de Confidentialité
+  Design: refontiq_redesign v2.0
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité | Refontiq - Agence Web Abidjan</title>
+    <meta name="description" content="Politique de confidentialité et protection des données personnelles de Refontiq.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://refontiq.com/politique-confidentialite">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <meta name="theme-color" content="#0f172a">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #2dd4bf;
+            --secondary-dark: #14b8a6;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        nav a:not(.btn)::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+
+        nav a:not(.btn):hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--secondary);
+            color: var(--primary);
+            font-weight: 700;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(45, 212, 191, 0.3);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+            padding: 5px;
+        }
+
+        .legal-hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #ffffff 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .legal-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .legal-hero h1 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .legal-hero h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--secondary-dark));
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .legal-hero p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .legal-content {
+            padding: 60px 0 80px;
+        }
+
+        .legal-content h2 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legal-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .legal-content h2 .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 50%;
+            font-size: 0.9rem;
+        }
+
+        .legal-content h3 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin: 25px 0 15px;
+            font-weight: 600;
+        }
+
+        .legal-content p {
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .legal-content ul {
+            margin: 15px 0;
+            list-style: none;
+        }
+
+        .legal-content li {
+            margin-bottom: 10px;
+            color: var(--text-main);
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .legal-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-dark);
+            font-weight: bold;
+        }
+
+        .legal-content a {
+            color: var(--secondary-dark);
+            font-weight: 500;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-left: 4px solid var(--secondary);
+            padding: 20px 25px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+            color: #94a3b8;
+            padding: 50px 0 30px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 30px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .footer-brand p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .footer-bottom a {
+            color: var(--secondary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 40px;
+            padding: 14px 28px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .legal-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://z-cdn-media.chatglm.cn/files/c8f66453-6c42-4d14-a71f-f1f84e59b235.png?auth_key=1874613005-32f082b754fd4d41b26cbd5867cb6699-0-43ffa7dd5d1f36453e468f5ed24eb3b5"
+                    alt="Refontiq" width="40" height="40">
+                <span>REFONTIQ</span>
+            </a>
+            <nav id="nav-menu">
+                <a href="index.html">Accueil</a>
+                <a href="mentions-legales.html">Mentions légales</a>
+                <a href="politique-confidentialite.html">Confidentialité</a>
+                <a href="cgv.html">CGV</a>
+                <a href="tarifs.html" class="btn">Tarifs</a>
+            </nav>
+            <button class="mobile-toggle" onclick="document.getElementById('nav-menu').classList.toggle('active')"
+                aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <section class="legal-hero">
+        <div class="container">
+            <h1>Politique de Confidentialité</h1>
+            <p>Protection de vos données personnelles chez Refontiq</p>
+        </div>
+    </section>
+
+    <main class="legal-content">
+        <div class="container">
+            <p><strong>Dernière mise à jour :</strong> Janvier 2024</p>
+
+            <h2><span class="num">1</span> Introduction</h2>
+            <p>Refontiq s'engage à protéger la vie privée des utilisateurs de son site web et de ses services. Cette
+                politique de confidentialité explique comment nous collectons, utilisons, stockons et protégeons vos
+                informations personnelles conformément à la réglementation en vigueur en Côte d'Ivoire.</p>
+
+            <h2><span class="num">2</span> Données collectées</h2>
+            <h3>2.1 Données fournies volontairement</h3>
+            <ul>
+                <li>Nom et prénom</li>
+                <li>Adresse email</li>
+                <li>Numéro de téléphone</li>
+                <li>Nom de l'entreprise</li>
+                <li>Informations relatives à votre projet web</li>
+            </ul>
+
+            <h3>2.2 Données collectées automatiquement</h3>
+            <ul>
+                <li>Adresse IP</li>
+                <li>Type de navigateur et version</li>
+                <li>Système d'exploitation</li>
+                <li>Pages visitées et temps de consultation</li>
+            </ul>
+
+            <h2><span class="num">3</span> Finalités du traitement</h2>
+            <ul>
+                <li>Répondre à vos demandes de contact et de devis</li>
+                <li>Fournir nos services de création web</li>
+                <li>Assurer le suivi client et le support technique</li>
+                <li>Envoyer des newsletters (avec votre consentement)</li>
+                <li>Améliorer notre site et nos services</li>
+            </ul>
+
+            <h2><span class="num">4</span> Cookies</h2>
+            <p>Notre site utilise des cookies pour :</p>
+            <ul>
+                <li><strong>Cookies essentiels :</strong> Nécessaires au fonctionnement du site</li>
+                <li><strong>Cookies analytiques :</strong> Mesure d'audience</li>
+                <li><strong>Cookies de préférence :</strong> Mémorisation de vos choix</li>
+            </ul>
+            <p>Vous pouvez gérer vos préférences via les paramètres de votre navigateur.</p>
+
+            <h2><span class="num">5</span> Durée de conservation</h2>
+            <ul>
+                <li><strong>Données clients :</strong> Durée de la relation commerciale + 5 ans</li>
+                <li><strong>Données prospects :</strong> 3 ans après le dernier contact</li>
+                <li><strong>Cookies :</strong> 13 mois maximum</li>
+            </ul>
+
+            <h2><span class="num">6</span> Vos droits</h2>
+            <p>Vous disposez des droits suivants :</p>
+            <ul>
+                <li><strong>Droit d'accès :</strong> Obtenir une copie de vos données</li>
+                <li><strong>Droit de rectification :</strong> Corriger vos données inexactes</li>
+                <li><strong>Droit à l'effacement :</strong> Demander la suppression</li>
+                <li><strong>Droit d'opposition :</strong> Vous opposer au traitement</li>
+            </ul>
+            <div class="highlight-box">
+                <p>Pour exercer ces droits, contactez-nous à : <a
+                        href="mailto:contact@refontiq.com">contact@refontiq.com</a></p>
+            </div>
+
+            <h2><span class="num">7</span> Sécurité</h2>
+            <p>Nous mettons en œuvre des mesures techniques et organisationnelles :</p>
+            <ul>
+                <li>Chiffrement SSL/TLS des communications</li>
+                <li>Accès restreint aux données personnelles</li>
+                <li>Sauvegardes sécurisées</li>
+            </ul>
+
+            <h2><span class="num">8</span> Contact</h2>
+            <ul>
+                <li><strong>Email :</strong> <a href="mailto:contact@refontiq.com">contact@refontiq.com</a></li>
+                <li><strong>Téléphone :</strong> +225 01 00 37 29 00</li>
+                <li><strong>Adresse :</strong> Abidjan, Côte d'Ivoire</li>
+            </ul>
+
+            <a href="index.html" class="back-link">← Retour au site</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>REFONTIQ</h3>
+                <p>Agence web haute performance à Abidjan. Sites modernes, rapides et optimisés.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="tarifs.html">Tarifs</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                    <li><a href="cgv.html">CGV</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Refontiq. Tous droits réservés. | Abidjan, Côte d'Ivoire</p>
+        </div>
+    </footer>
+</body>
+
+</html>
