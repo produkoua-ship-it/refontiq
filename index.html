@@ -8,20 +8,22 @@
     <meta name="description"
         content="Agence web Refontiq à Abidjan. Création de site premium, refonte intelligente, automatisation. Livraison en 7-14 jours.">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #2563eb;
             --primary-hover: #1d4ed8;
             --accent: #60a5fa;
-            --navy: #1A1A1A; /* Noir Technologique */
-            --navy-mid: #141414;
-            --navy-light: #262626;
-            --gris-acier: #CCCCCC;
+            --navy: #040d1a;
+            --navy-mid: #0a1628;
+            --navy-light: #1e293b;
             --glass: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
-            --text: #ffffff;
-            --text-muted: #CCCCCC; /* Gris Acier */
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
             --white: #ffffff;
             --max: 1280px;
         }
@@ -37,15 +39,15 @@
         }
 
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--navy);
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, .font-montserrat {
-            font-family: 'Montserrat', sans-serif;
+        h1, h2, h3, h4, .font-premium {
+            font-family: 'Outfit', sans-serif;
             letter-spacing: -0.02em;
         }
 
@@ -220,9 +222,57 @@
             display: none;
             background: none;
             border: none;
-            color: var(--text);
-            font-size: 1.4rem;
             cursor: pointer;
+            padding: 10px;
+            margin-right: -10px;
+            z-index: 1001;
+            position: relative;
+            width: 44px;
+            height: 44px;
+        }
+
+        .hamburger-box {
+            width: 24px;
+            height: 18px;
+            position: relative;
+            display: block;
+        }
+
+        .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+            width: 24px;
+            height: 2px;
+            background-color: var(--text);
+            position: absolute;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-inner {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hamburger-inner::before {
+            content: '';
+            top: -8px;
+        }
+
+        .hamburger-inner::after {
+            content: '';
+            top: 8px;
+        }
+
+        /* Open state for toggle if needed, but we use a separate close button in mobile-nav */
+        .mobile-nav.open ~ header .hamburger-inner {
+            background-color: transparent;
+        }
+
+        .mobile-nav.open ~ header .hamburger-inner::before {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .mobile-nav.open ~ header .hamburger-inner::after {
+            transform: translateY(-8px) rotate(-45deg);
         }
 
         /* === BUTTONS === */
@@ -253,7 +303,7 @@
             gap: 8px;
             background: transparent;
             color: var(--text);
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-weight: 600;
             font-size: 0.95rem;
             padding: 14px 30px;
@@ -380,7 +430,7 @@
         .stat-item {}
 
         .stat-num {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: 1.8rem;
             font-weight: 800;
             color: var(--white);
@@ -499,7 +549,7 @@
         }
 
         .float-card-value {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: 1rem;
             font-weight: 700;
             color: var(--white);
@@ -558,7 +608,7 @@
         }
 
         .logo-band span {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: 0.85rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.2);
@@ -603,7 +653,7 @@
         }
 
         .section-title {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 800;
             color: var(--white);
@@ -623,11 +673,23 @@
             line-height: 1.7;
         }
 
-        /* === SERVICES (WHITE DESIGN) === */
+        /* === SERVICES (DARK PREMIUM DESIGN) === */
         #services {
-            background: var(--white);
-            color: #1e293b;
+            background: var(--navy-mid);
+            color: var(--text);
             padding: 120px 0;
+            position: relative;
+        }
+
+        #services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .services-header {
@@ -638,38 +700,55 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 32px;
         }
 
         .svc-card {
-            background: var(--white);
-            border: 1px solid #e2e8f0;
-            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 28px;
             padding: 0;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            backdrop-filter: blur(10px);
+        }
+
+        .svc-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(37, 99, 235, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
         }
 
         .svc-img-canvas {
             width: 100%;
-            height: 220px;
-            background: #f1f5f9;
+            height: 240px;
+            background: var(--navy-light);
             overflow: hidden;
+            position: relative;
+        }
+
+        .svc-img-canvas::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, var(--navy-mid));
+            opacity: 0.8;
         }
 
         .svc-img-canvas img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s;
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
         .svc-card:hover .svc-img-canvas img {
-            transform: scale(1.08);
+            transform: scale(1.1);
         }
 
         .svc-content {
@@ -680,61 +759,54 @@
         }
 
         .svc-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 900;
-            color: #0f172a;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
             margin-bottom: 12px;
-            text-align: center;
+            text-align: left;
         }
 
         .svc-card p {
-            font-size: 0.9rem;
-            color: #64748b;
-            line-height: 1.6;
-            margin-bottom: 24px;
-            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 28px;
+            text-align: left;
         }
 
         .svc-footer {
             margin-top: auto;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 14px;
             padding-top: 24px;
-            border-top: 1px solid #f1f5f9;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .svc-price {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 1.15rem;
-            color: var(--primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent);
         }
 
         .svc-btn {
-            background: var(--primary);
+            background: rgba(255, 255, 255, 0.05);
             color: var(--white);
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
             transition: all 0.3s;
-        }
-
-        .svc-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
-            border-color: var(--primary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .svc-card:hover .svc-btn {
-            background: var(--navy);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+            background: var(--primary);
+            border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
         }
 
         .svc-icon-wrap {
@@ -841,7 +913,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-weight: 800;
             font-size: 0.85rem;
             color: var(--text-muted);
@@ -849,7 +921,7 @@
         }
 
         .step-info h4 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: 1rem;
             font-weight: 700;
             color: var(--white);
@@ -924,196 +996,6 @@
             font-weight: 500;
         }
 
-        /* === PRICING === */
-        #pricing {
-            background: var(--navy);
-        }
-
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            align-items: start;
-        }
-
-        .price-card {
-            background: var(--glass);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 20px;
-            padding: 36px;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .price-card:hover {
-            border-color: rgba(37, 99, 235, 0.2);
-            transform: translateY(-4px);
-        }
-
-        .price-card.featured {
-            background: linear-gradient(160deg, var(--navy-mid), #0a6e66);
-            border-color: var(--accent);
-            transform: translateY(-8px);
-            box-shadow: 0 32px 64px rgba(37, 99, 235, 0.2);
-        }
-
-        .price-card.featured:hover {
-            transform: translateY(-14px);
-        }
-
-        .featured-badge {
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
-            color: var(--navy);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 0.72rem;
-            letter-spacing: 1px;
-            padding: 5px 14px;
-            border-radius: 100px;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-
-        .price-plan {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .featured .price-plan {
-            color: rgba(10, 22, 40, 0.6);
-        }
-
-        .price-amount {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--white);
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .featured .price-amount {
-            color: var(--navy);
-        }
-
-        .price-amount .currency {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-right: 4px;
-        }
-
-        .price-amount .unit {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: var(--text-muted);
-        }
-
-        .featured .price-amount .unit {
-            color: rgba(10, 22, 40, 0.5);
-        }
-
-        .price-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 8px;
-            margin-bottom: 28px;
-            padding-bottom: 28px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-            line-height: 1.5;
-        }
-
-        .featured .price-desc {
-            color: rgba(10, 22, 40, 0.6);
-            border-bottom-color: rgba(10, 22, 40, 0.1);
-        }
-
-        .price-feats {
-            margin-bottom: 30px;
-        }
-
-        .price-feat-item {
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-            margin-bottom: 13px;
-            font-size: 0.88rem;
-            color: var(--text-muted);
-        }
-
-        .featured .price-feat-item {
-            color: rgba(10, 22, 40, 0.75);
-        }
-
-        .feat-check {
-            width: 18px;
-            height: 18px;
-            flex-shrink: 0;
-            background: rgba(37, 99, 235, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.65rem;
-            color: var(--accent);
-            margin-top: 1px;
-        }
-
-        .featured .feat-check {
-            background: rgba(10, 22, 40, 0.1);
-            color: var(--navy);
-        }
-
-        .btn-price {
-            display: block;
-            text-align: center;
-            padding: 14px;
-            border-radius: 10px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            color: var(--text);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .btn-price:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: rgba(37, 99, 235, 0.07);
-        }
-
-        .btn-price-featured {
-            display: block;
-            text-align: center;
-            padding: 14px;
-            border-radius: 10px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            background: var(--navy);
-            color: var(--accent);
-            transition: all 0.3s;
-        }
-
-        .btn-price-featured:hover {
-            background: var(--navy-mid);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
 
         /* === CTA === */
         #cta {
@@ -1128,7 +1010,7 @@
         }
 
         .cta-title {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 800;
             color: var(--white);
@@ -1188,7 +1070,7 @@
         }
 
         .footer-col h5 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -1237,7 +1119,7 @@
             right: 0;
             bottom: 0;
             background: rgba(4, 13, 26, 0.98);
-            z-index: 999;
+            z-index: 2000;
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -1249,7 +1131,7 @@
         }
 
         .mobile-nav a {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--text);
@@ -1314,13 +1196,7 @@
                 gap: 50px;
             }
 
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
 
-            .price-card.featured {
-                transform: none;
-            }
 
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
@@ -1329,7 +1205,53 @@
 
         @media (max-width: 768px) {
             .services-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .svc-card {
+                border-radius: 16px;
+            }
+
+            .svc-img-canvas {
+                height: 140px;
+            }
+
+            .svc-content {
+                padding: 16px;
+            }
+
+            .svc-card h3 {
+                font-size: 0.95rem;
+                margin-bottom: 6px;
+            }
+
+            .svc-card p {
+                font-size: 0.75rem;
+                line-height: 1.4;
+                margin-bottom: 16px;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .svc-footer {
+                padding-top: 12px;
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
+            }
+
+            .svc-price {
+                font-size: 0.85rem;
+            }
+
+            .svc-btn {
+                width: 100%;
+                text-align: center;
+                padding: 8px 12px;
+                font-size: 0.75rem;
             }
 
             nav ul {
@@ -1340,24 +1262,114 @@
                 display: block;
             }
 
+            #hero {
+                min-height: 90vh;
+                display: flex;
+                align-items: center;
+                padding: 0;
+                margin-top: 0;
+            }
+
             .hero-grid {
-                text-align: center;
+                display: block;
+                position: relative;
+                width: 100%;
+                min-height: 90vh;
+            }
+
+            .hero-visual {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                margin-top: 0;
+                opacity: 1;
+                filter: none;
+                mask-image: none;
+                -webkit-mask-image: none;
+            }
+
+            .hero-visual::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to bottom, 
+                    rgba(4, 13, 26, 0.5) 0%, 
+                    rgba(4, 13, 26, 0.8) 60%, 
+                    var(--navy) 100%);
+                z-index: 2;
+            }
+
+            .hero-img-wrap {
+                height: 100%;
+                -webkit-mask-image: none;
+                mask-image: none;
+            }
+
+            .hero-img-wrap img {
+                height: 100vh !important;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 0;
+            }
+
+            .hero-left {
+                position: relative;
+                z-index: 10;
+                padding: 140px 20px 60px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 90vh;
+                background: none;
+                backdrop-filter: none;
+            }
+
+            .hero-title {
+                font-size: 2.6rem;
+                text-shadow: 0 2px 10px rgba(0,0,0,0.5);
             }
 
             .hero-sub {
-                margin: 0 auto 44px;
+                text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+                font-weight: 500;
+                color: var(--white);
+                opacity: 0.9;
             }
 
             .hero-ctas {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+                max-width: 320px;
+                margin-top: 10px;
+            }
+
+            .btn-primary, .btn-ghost {
+                width: 100%;
                 justify-content: center;
+                padding: 16px 24px;
             }
 
             .hero-stats {
                 justify-content: center;
+                gap: 24px;
+                margin-top: 40px;
+                padding-top: 30px;
+                border-top-color: rgba(255, 255, 255, 0.15);
+                width: 100%;
             }
 
-            .float-card-1,
-            .float-card-2 {
+            .stat-num {
+                font-size: 1.5rem;
+            }
+
+            .float-card {
                 display: none;
             }
 
@@ -1398,7 +1410,7 @@
         <a href="#hero" onclick="closeMobileNav()">Accueil</a>
         <a href="#services" onclick="closeMobileNav()">Services</a>
         <a href="#method" onclick="closeMobileNav()">Méthode</a>
-        <a href="#pricing" onclick="closeMobileNav()">Tarifs</a>
+        <a href="tarifs.html" onclick="closeMobileNav()">Tarifs</a>
         <a href="#cta" class="btn-primary" onclick="closeMobileNav()">Démarrer</a>
     </div>
 
@@ -1406,7 +1418,7 @@
     <header id="mainHeader">
         <div class="nav-wrap">
             <a href="#hero" class="logo-wrap">
-                <img src="logo.jpeg" alt="Refontiq" class="logo-img">
+                <img src="logo.png" alt="Refontiq" class="logo-img">
             </a>
             <nav>
                 <ul>
@@ -1416,7 +1428,11 @@
                     <li><a href="#cta" class="btn-nav">Demander un Devis</a></li>
                 </ul>
             </nav>
-            <button class="mobile-toggle" id="mobileOpen">☰</button>
+            <button class="mobile-toggle" id="mobileOpen" aria-label="Menu">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
         </div>
     </header>
 
@@ -1491,7 +1507,7 @@
         <div class="container">
             <div class="services-header">
                 <h2 class="section-title">Nos Services</h2>
-                <p class="section-desc">Des solutions digitales élégantes et performantes pour propulser votre entreprise vers de nouveaux sommets.</p>
+                <p class="section-desc" style="margin: 0 auto; text-align: center;">Des solutions digitales élégantes et performantes pour propulser votre entreprise vers de nouveaux sommets.</p>
             </div>
 
             <div class="services-grid">
@@ -1719,95 +1735,7 @@
         </div>
     </section>
 
-    <!-- PRICING -->
-    <section id="pricing" class="section-pad">
-        <div class="container">
-            <div class="pricing-header">
-                <div class="section-tag" style="margin: 0 auto 14px;">✦ Tarifs</div>
-                <h2 class="section-title">Packs <span class="accent">transparents</span></h2>
-                <p class="section-desc" style="margin: 0 auto;">Des offres claires pour des résultats mesurables.
-                    Choisissez selon votre ambition.</p>
-            </div>
 
-            <div class="pricing-grid">
-                <!-- Pack Essentiel -->
-                <div class="price-card reveal">
-                    <div class="price-plan">Pack Starter</div>
-                    <div class="price-amount"><span class="currency">FCFA</span> 75 000</div>
-                    <p class="price-desc">Pour les startups et petites structures qui veulent une présence web solide.
-                    </p>
-                    <div class="price-feats">
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>Site Vitrine One-Page
-                        </div>
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>Design Responsive Mobile
-                        </div>
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>Formulaire de Contact
-                        </div>
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>SEO de base intégré
-                        </div>
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>Livraison en 7 jours
-                        </div>
-                    </div>
-                    <a href="#cta" class="btn-price">Choisir Essentiel</a>
-                </div>
-
-                <!-- Pack Business -->
-                <div class="price-card featured reveal reveal-delay-1">
-                    <div class="featured-badge">⭐ Recommandé</div>
-                    <div class="price-plan">Pack Pro</div>
-                    <div class="price-amount"><span class="currency">FCFA</span> 150 000</div>
-                    <p class="price-desc">La solution complète pour votre image de marque et votre croissance digitale.
-                    </p>
-                    <div class="price-feats">
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>Site Multi-pages (5 pages)
-                        </div>
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>SEO Avancé + Analytics
-                        </div>
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>Design Premium sur-mesure
-                        </div>
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>1 Mois de Support offert
-                        </div>
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>Livraison en 10–14 jours
-                        </div>
-                    </div>
-                    <a href="#cta" class="btn-price-featured">Propulser mon business</a>
-                </div>
-
-                <!-- Pack E-Commerce -->
-                <div class="price-card reveal reveal-delay-2">
-                    <div class="price-plan">Pack Premium</div>
-                    <div class="price-amount" style="font-size:1.8rem;">Sur Devis</div>
-                    <p class="price-desc">Vendez vos produits en ligne 24/7, avec paiement Mobile Money intégré.</p>
-                    <div class="price-feats">
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>Boutique complète
-                        </div>
-
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>Gestion des stocks
-                        </div>
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>Formation admin incluse
-                        </div>
-                        <div class="price-feat-item">
-                            <div class="feat-check">✓</div>Support 3 mois offert
-                        </div>
-                    </div>
-                    <a href="#cta" class="btn-price">Demander un devis</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- CTA FINAL -->
     <section id="cta">
@@ -1832,7 +1760,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#hero" class="logo-wrap" style="margin-bottom:16px;">
-                        <img src="logo.jpeg" alt="Refontiq" class="logo-img" style="height: 40px;">
+                        <img src="logo.png" alt="Refontiq" class="logo-img" style="height: 40px;">
                     </a>
                     <p>Agence web haute performance à Abidjan. Design, Code, Stratégie digitale.</p>
                 </div>

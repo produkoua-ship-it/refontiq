@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGV | Refontiq - Agence Web Abidjan</title>
     <meta name="description" content="Conditions Générales de Vente de Refontiq pour les services de création web.">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -156,6 +157,26 @@
             margin: 0 auto;
         }
 
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo-img {
+            height: 48px;
+            width: auto;
+            display: block;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+            transition: all 0.3s ease;
+        }
+
+        .logo-wrap:hover .logo-img {
+            transform: translateY(-2px) scale(1.02);
+            filter: drop-shadow(0 8px 12px rgba(37, 99, 235, 0.3));
+        }
+
         .logo {
             display: flex;
             align-items: center;
@@ -165,10 +186,6 @@
             font-size: 1.4rem;
             color: var(--white);
             letter-spacing: -0.5px;
-        }
-
-        .logo-dot {
-            color: var(--accent);
         }
 
         nav ul {
@@ -497,8 +514,8 @@
     <!-- HEADER -->
     <header id="mainHeader">
         <div class="nav-wrap">
-            <a href="index.html" class="logo">
-                Refontiq<span class="logo-dot">.</span>
+            <a href="index.html" class="logo-wrap">
+                <img src="logo.png" alt="Refontiq" class="logo-img">
             </a>
             <nav>
                 <ul>
@@ -687,7 +704,9 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
-                <div class="logo">Refontiq<span class="logo-dot">.</span></div>
+                <a href="index.html" class="logo-wrap" style="margin-bottom:16px;">
+                    <img src="logo.png" alt="Refontiq" class="logo-img" style="height: 40px;">
+                </a>
                 <p>Agence web haute performance à Abidjan. Design, Code, Stratégie digitale.</p>
             </div>
             <div class="footer-col">
