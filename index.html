@@ -7,22 +7,21 @@
     <title>Refontiq — Création de Sites Web Haute Performance à Abidjan</title>
     <meta name="description"
         content="Agence web Refontiq à Abidjan. Création de site premium, refonte intelligente, automatisation. Livraison en 7-14 jours.">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #2563eb;
             --primary-hover: #1d4ed8;
             --accent: #60a5fa;
-            --navy: #040d1a;
-            --navy-mid: #0a1628;
-            --navy-light: #1e293b;
+            --navy: #1A1A1A; /* Noir Technologique */
+            --navy-mid: #141414;
+            --navy-light: #262626;
+            --gris-acier: #CCCCCC;
             --glass: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
+            --text: #ffffff;
+            --text-muted: #CCCCCC; /* Gris Acier */
             --white: #ffffff;
             --max: 1280px;
         }
@@ -38,15 +37,16 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             background: var(--navy);
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, .font-outfit {
-            font-family: 'Outfit', sans-serif;
+        h1, h2, h3, h4, .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.02em;
         }
 
         /* === NOISE TEXTURE OVERLAY === */
@@ -74,7 +74,7 @@
             position: absolute;
             width: 900px;
             height: 900px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(204, 204, 204, 0.05) 0%, transparent 70%);
             top: -200px;
             right: -200px;
             animation: drift1 18s ease-in-out infinite;
@@ -85,7 +85,7 @@
             position: absolute;
             width: 700px;
             height: 700px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(204, 204, 204, 0.03) 0%, transparent 70%);
             bottom: 10%;
             left: -150px;
             animation: drift2 22s ease-in-out infinite;
@@ -164,18 +164,25 @@
             margin: 0 auto;
         }
 
-        .logo {
+        .logo-wrap {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-weight: 800;
-            font-size: 1.6rem;
-            color: var(--white);
-            letter-spacing: -1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        .logo-dot {
-            color: var(--primary);
+        .logo-img {
+            height: 48px;
+            width: auto;
+            display: block;
+            mix-blend-mode: screen; /* Fusions the logo with the background */
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+            transition: all 0.3s ease;
+        }
+
+        .logo-wrap:hover .logo-img {
+            transform: translateY(-2px) scale(1.02);
+            filter: drop-shadow(0 8px 12px rgba(37, 99, 235, 0.3));
         }
 
         nav ul {
@@ -247,7 +254,7 @@
             gap: 8px;
             background: transparent;
             color: var(--text);
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             font-size: 0.95rem;
             padding: 14px 30px;
@@ -374,7 +381,7 @@
         .stat-item {}
 
         .stat-num {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.8rem;
             font-weight: 800;
             color: var(--white);
@@ -493,7 +500,7 @@
         }
 
         .float-card-value {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
             font-weight: 700;
             color: var(--white);
@@ -552,7 +559,7 @@
         }
 
         .logo-band span {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 0.85rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.2);
@@ -584,20 +591,20 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(37, 99, 235, 0.08);
-            border: 1px solid rgba(37, 99, 235, 0.2);
+            background: rgba(204, 204, 204, 0.08); /* Gris Acier */
+            border: 1px solid rgba(204, 204, 204, 0.2);
             border-radius: 100px;
             padding: 6px 14px;
             font-size: 0.78rem;
             font-weight: 600;
-            color: var(--accent);
+            color: var(--gris-acier);
             margin-bottom: 16px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .section-title {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 800;
             color: var(--white);
@@ -674,7 +681,7 @@
         }
 
         .svc-card h3 {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.25rem;
             font-weight: 900;
             color: #0f172a;
@@ -702,7 +709,7 @@
         }
 
         .svc-price {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             font-size: 1.15rem;
             color: var(--primary);
@@ -714,7 +721,7 @@
             padding: 12px 28px;
             border-radius: 50px;
             font-size: 0.9rem;
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             transition: all 0.3s;
         }
@@ -835,7 +842,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             font-size: 0.85rem;
             color: var(--text-muted);
@@ -843,7 +850,7 @@
         }
 
         .step-info h4 {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
             font-weight: 700;
             color: var(--white);
@@ -967,7 +974,7 @@
             transform: translateX(-50%);
             background: var(--accent);
             color: var(--navy);
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             font-size: 0.72rem;
             letter-spacing: 1px;
@@ -978,7 +985,7 @@
         }
 
         .price-plan {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 0.82rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -992,7 +999,7 @@
         }
 
         .price-amount {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 2.5rem;
             font-weight: 800;
             color: var(--white);
@@ -1076,7 +1083,7 @@
             text-align: center;
             padding: 14px;
             border-radius: 10px;
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: 0.9rem;
             transition: all 0.3s;
@@ -1096,7 +1103,7 @@
             text-align: center;
             padding: 14px;
             border-radius: 10px;
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: 0.9rem;
             background: var(--navy);
@@ -1122,7 +1129,7 @@
         }
 
         .cta-title {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 800;
             color: var(--white);
@@ -1182,7 +1189,7 @@
         }
 
         .footer-col h5 {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -1243,7 +1250,7 @@
         }
 
         .mobile-nav a {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--text);
@@ -1399,8 +1406,8 @@
     <!-- HEADER -->
     <header id="mainHeader">
         <div class="nav-wrap">
-            <a href="#hero" class="logo">
-                Refontiq<span class="logo-dot">.</span>
+            <a href="#hero" class="logo-wrap">
+                <img src="logo.png" alt="Refontiq" class="logo-img">
             </a>
             <nav>
                 <ul>
@@ -1825,7 +1832,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="logo" style="margin-bottom:16px;">Refontiq<span class="logo-dot">.</span></div>
+                    <a href="#hero" class="logo-wrap" style="margin-bottom:16px;">
+                        <img src="logo.png" alt="Refontiq" class="logo-img" style="height: 40px;">
+                    </a>
                     <p>Agence web haute performance à Abidjan. Design, Code, Stratégie digitale.</p>
                 </div>
                 <div class="footer-col">
